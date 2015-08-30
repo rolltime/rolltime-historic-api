@@ -2,6 +2,8 @@
 The current version of the API simply exposes the complete `PostgreSQL` insance in an internal TSL address. Future versions of this API will probably have more refined output methods (such as calculations and specific summaries). This version is appropriate for the time being.
 
 ## Docker Usage
+[![](https://badge.imagelayers.io/luiscape/rolltime-historic-api:latest.svg)](https://imagelayers.io/?images=luiscape/rolltime-historic-api:latest 'Get your own badge on imagelayers.io')
+
 In order to be run successfully, the `Dockerfile` needs to be linked to a `postgres` container and ran with the `postgres` variables:
 
 * `POSTGRES_DB_NAME`: database name.
