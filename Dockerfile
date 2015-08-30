@@ -14,7 +14,6 @@ RUN tar --xz -xvf postgrest-${POSTGREST_VERSION}.tar.xz
 RUN mv postgrest-${POSTGREST_VERSION} /usr/local/bin/postgrest
 
 CMD postgrest --db-host $POSTGRES_PORT_5432_TCP_ADDR \
-              --db-port 5432 \
               --db-name $POSTGRES_DB_NAME \
               --db-user $POSTGRES_DB_USER \
               --db-pass $POSTGRES_DB_PASSWORD \
