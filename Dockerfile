@@ -15,9 +15,9 @@ RUN mv postgrest-${POSTGREST_VERSION} /usr/local/bin/postgrest
 
 CMD postgrest --db-host $POSTGRES_PORT_5432_TCP_ADDR \
               --db-port 5432 \
-              --db-name rolltime \
-              --db-user rolltime \
-              --db-pass rolltime \
+              --db-name $POSTGRES_DB_NAME \
+              --db-user $POSTGRES_DB_USER \
+              --db-pass $POSTGRES_DB_PASSWORD \
               --db-pool 200 \
               --anonymous postgres \
               --port 3000 \
