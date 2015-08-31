@@ -9,17 +9,16 @@ RUN yum install -y tar wget postgresql-devel
 
 ENV POSTGREST_VERSION 0.2.11.0
 
-RUN wget http://bin.begriffs.com/dbapi/heroku/postgrest-${POSTGREST_VERSION}.tar.xz
-RUN tar --xz -xvf postgrest-${POSTGREST_VERSION}.tar.xz
-RUN mv postgrest-${POSTGREST_VERSION} /usr/local/bin/postgrest
+RUN \
+  wget http://bin.begriffs.com/dbapi/heroku/postgrest-${POSTGREST_VERSION}.tar.xz \
+  && tar --xz -xvf postgrest-${POSTGREST_VERSION}.tar.xz \
+  && mv postgrest-${POSTGREST_VERSION} /usr/local/bin/postgrest
 
-CMD postgrest --db-host $POSTGRES_PORT_5432_TCP_ADDR \
-              --db-name $POSTGRES_DB_NAME \
-              --db-user $POSTGRES_DB_USER \
-              --db-pass $POSTGRES_DB_PASSWORD \
-              --db-pool 200 \
-              --anonymous postgres \
-              --port 3000 \
-              --v1schema public
+RUN \
+  git clone https://github.com/rolltime/rolltime-historic-api
+
+WORKDIR "/rolltime-historic-api"
+
+CMD ["make", "run"]
 
 EXPOSE 3000
