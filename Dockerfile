@@ -5,7 +5,7 @@
 
 FROM centos
 
-RUN yum install -y tar wget postgresql-devel
+RUN yum install -y tar wget postgresql-devel git
 
 ENV POSTGREST_VERSION 0.2.11.0
 
