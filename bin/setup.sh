@@ -1,7 +1,11 @@
 #!/bin/bash
 
 #
-# Setting up the application.
+# Setup folder structure.
 #
-npm install -g istanbul
+mkdir log
+
+#
+# Install Node dependencies.
+#
 npm install
