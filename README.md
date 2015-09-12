@@ -1,5 +1,6 @@
 ## Rolltime Historic API
 The historic API uses a bike station id as a REST endpoint and, together with a `date` parameter, will query the PostgreSQL instance for the specified station data. If no `date` is provided, the API will return data for the current date (server time).
+
 [![Build Status](https://travis-ci.org/rolltime/rolltime-historic-api.svg)](https://travis-ci.org/rolltime/rolltime-historic-api)
 
 ## Examples
