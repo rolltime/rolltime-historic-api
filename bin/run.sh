@@ -1,14 +1,12 @@
 #!/bin/bash
 
 #
-# Run PostgREST with all the
-# database config options.
+# Configuring the MongoDB
+# database.
 #
-postgrest --db-host tcp://$POSTGRES_PORT_5432_TCP_ADDR \
-          --db-name $POSTGRES_DB_NAME \
-          --db-user $POSTGRES_DB_USER \
-          --db-pass $POSTGRES_DB_PASSWORD \
-          --db-pool 200 \
-          --anonymous postgres \
-          --port 3000 \
-          --v1schema public
+make configure
+
+#
+# Running application.
+#
+pm2 start server.js --no-daemon
