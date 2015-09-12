@@ -14,4 +14,4 @@ WORKDIR "/rolltime-historic-api"
 
 CMD ["make", "run"]
 
-EXPOSE 3000
+EXPOSE 2000
